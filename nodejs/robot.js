@@ -1,6 +1,6 @@
 const GPIO = require('onoff').Gpio;
 const admin = require('firebase-admin');
-const config = require('pi2d2.config.json');
+const config = require('./pi2d2.config.json');
 
 admin.initializeApp({
     credential: admin.credential.cert(config.firebase_credentials),
