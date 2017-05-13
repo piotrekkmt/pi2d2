@@ -1,0 +1,30 @@
+{
+  "name": "pi2d2",
+  "version": "1.0.0",
+  "description": "Pi2D2 is a RaspberryPi R2D2 clone made for University College Cork Introduction to University Programme to demonstrate to school kids how easy it is to make robots",
+  "main": "pi2d2.js",
+  "dependencies": {
+    "firebase-admin": "^4.2.1",
+    "keypress": "^0.2.1",
+    "onoff": "^1.1.2"
+  },
+  "scripts": {
+    "start": "npm install && node pi2d2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piotrekkmt/pi2d2.git"
+  },
+  "keywords": [
+    "pi2d2",
+    "raspberrypi",
+    "r2d2",
+    "robot"
+  ],
+  "author": "Peter Poliwoda (http://www.peterpoliwoda.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piotrekkmt/pi2d2/issues"
+  },
+  "homepage": "https://github.com/piotrekkmt/pi2d2#readme"
+}
