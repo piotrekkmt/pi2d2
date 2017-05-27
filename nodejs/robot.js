@@ -29,7 +29,7 @@ moveRef.on('value', function(snapshot) {
 });
 
 var pi2D2 = {
-    exit: function() {
+    exit: () => {
         for (let nr in usedPins) {
             usedPins[nr].writeSync(0);
             usedPins[nr].unexport();
@@ -37,51 +37,56 @@ var pi2D2 = {
         console.log('Cleaned up. Bye, bye!');
         process.exit();
     },
-    stop: function() {
+    stop: () => {
         motorLForward.writeSync(0);
         motorLBack.writeSync(0);
         motorRForward.writeSync(0);
         motorRBack.writeSync(0);
     },
-    forwards: function() {
+    forwards: () => {
         motorLForward.writeSync(1);
         motorLBack.writeSync(0);
         motorRForward.writeSync(1);
         motorRBack.writeSync(0);
     },
-    backwards: function() {
+    backwards: () => {
         motorLForward.writeSync(0);
         motorLBack.writeSync(1);
         motorRForward.writeSync(0);
         motorRBack.writeSync(1);
     },
-    left: function() {
+    left: () => {
         motorLForward.writeSync(0);
         motorLBack.writeSync(1);
         motorRForward.writeSync(1);
         motorRBack.writeSync(0);
     },
-    right: function() {
+    right: () => {
         motorLForward.writeSync(1);
         motorLBack.writeSync(0);
         motorRForward.writeSync(0);
         motorRBack.writeSync(1);
     },
-    move: function(keypress) {
+    move: (keypress) => {
         switch (keypress) {
         case 'up':
+        case 'w':
             pi2D2.forwards();
             break;
         case 'down':
+        case 's':
             pi2D2.backwards();
             break;
         case 'left':
+        case 'a':
             pi2D2.left();
             break;
         case 'right':
+        case 'd':
             pi2D2.right();
             break;
         case 'space':
+        case 'x':
             pi2D2.stop();
             break;
         }

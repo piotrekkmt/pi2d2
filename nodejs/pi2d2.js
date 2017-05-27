@@ -9,7 +9,7 @@ admin.initializeApp({
 
 var db = admin.database();
 
-var controls = ['up', 'down', 'left', 'right', 'w', 'a', 's', 'd', 'space'];
+var controls = ['up', 'down', 'left', 'right', 'w', 'a', 's', 'd', 'space', 'x'];
 
 function setMovingDirection(direction) {
     db.ref('move/').set({
