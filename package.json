@@ -5,8 +5,10 @@
   "main": "pi2d2.js",
   "dependencies": {
     "firebase-admin": "^4.2.1",
+    "gamepad": "^1.6.0",
     "keypress": "^0.2.1",
-    "onoff": "^1.1.2"
+    "onoff": "^1.1.2",
+    "socket.io-client": "^2.1.1"
   },
   "scripts": {
     "start": "npm install && node pi2d2.js"
