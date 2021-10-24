@@ -4,6 +4,7 @@
   "description": "Pi2D2 is a RaspberryPi R2D2 clone made for University College Cork Introduction to University Programme to demonstrate to school kids how easy it is to make robots",
   "main": "pi2d2.js",
   "dependencies": {
+    "epocjs": "^2.1.3",
     "firebase-admin": "^4.2.1",
     "gamepad": "^1.6.0",
     "keypress": "^0.2.1",
