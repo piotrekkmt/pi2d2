@@ -10,10 +10,10 @@ admin.initializeApp({
 let db = admin.database();
 
 /* Set up motor pins */
-let motorRForward = new GPIO(9, 'out'),
-    motorRBack = new GPIO(10, 'out'),
-    motorLForward = new GPIO(8, 'out'),
-    motorLBack = new GPIO(7, 'out');
+let motorRForward = new GPIO(10, 'out'),
+    motorRBack = new GPIO(9, 'out'),
+    motorLForward = new GPIO(7, 'out'),
+    motorLBack = new GPIO(8, 'out');
 
 let usedPins = [motorLForward, motorLBack, motorRForward, motorRBack];
 
@@ -22,13 +22,13 @@ process.on('SIGINT', function() {
     pi2D2.exit();
 });
 
-var moveRef = db.ref('move/');
+let moveRef = db.ref('move/');
 moveRef.on('value', function(snapshot) {
     console.log('received from database', snapshot.val());
     pi2D2.move(snapshot.val().direction);
 });
 
-var pi2D2 = {
+let pi2D2 = {
     exit: () => {
         for (let nr in usedPins) {
             usedPins[nr].writeSync(0);
@@ -44,16 +44,16 @@ var pi2D2 = {
         motorRBack.writeSync(0);
     },
     forwards: () => {
-        motorLForward.writeSync(1);
-        motorLBack.writeSync(0);
-        motorRForward.writeSync(1);
-        motorRBack.writeSync(0);
-    },
-    backwards: () => {
         motorLForward.writeSync(0);
         motorLBack.writeSync(1);
         motorRForward.writeSync(0);
         motorRBack.writeSync(1);
+    },
+    backwards: () => {
+        motorLForward.writeSync(1);
+        motorLBack.writeSync(0);
+        motorRForward.writeSync(1);
+        motorRBack.writeSync(0);
     },
     left: () => {
         motorLForward.writeSync(0);
